@@ -28,9 +28,9 @@ class BclSDK {
     /**
      * Deploys new coin
      */
-    async deployCoin(sender, config) {
+    async deployCoin(sender, config, firstBuy) {
         const master = this.apiProvider.open(BclMaster_1.BclMaster.createFromAddress(this.masterAddress));
-        await master.sendDeployCoin(sender, config);
+        await master.sendDeployCoin(sender, config, firstBuy);
     }
     /**
      * Returns amount of coins one can get for providing given amount of TONs

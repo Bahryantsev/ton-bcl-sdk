@@ -1,7 +1,7 @@
 import { Address, Contract, OpenedContract, Sender } from "@ton/core";
 import { BclClient } from "./client/BclClient";
 import { ClientOptions } from "./client/types";
-import { BclJetton } from "./wrappers/BclJetton";
+import { BclJetton, BuyOptions } from "./wrappers/BclJetton";
 import { DeployCoinInput } from "./wrappers/BclMaster";
 export type AnyApiProvider = {
     open<T extends Contract>(contract: T): OpenedContract<T>;
@@ -37,7 +37,7 @@ export declare class BclSDK {
     /**
      * Deploys new coin
      */
-    deployCoin(sender: Sender, config: DeployCoinInput): Promise<void>;
+    deployCoin(sender: Sender, config: DeployCoinInput, firstBuy?: BuyOptions): Promise<void>;
     /**
      * Returns amount of coins one can get for providing given amount of TONs
      */
